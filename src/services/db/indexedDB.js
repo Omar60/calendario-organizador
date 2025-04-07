@@ -3,13 +3,13 @@
 
 import { DB } from "../../constants/appConstants.js";
 
-let dbInstance = null;
+let instanciaDB = null;
 
 // Inicializamos la conexion a la base de datos
 export const inicializarDB = () => {
   return new Promise((resolve, reject) => {
     if (instanciaDB) {
-      resolve(dbInstance);
+      resolve(instanciaDB);
       return;
     }
     const solicitud = indexedDB.open(DB.NAME, DB.VERSION);
